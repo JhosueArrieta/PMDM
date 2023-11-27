@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Assets/Characters/Player/Pirate/03-Jump Sword/Jump Sword 02.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/Player/Pirate/01-Idle Sword/Idle Sword 03.png" type="Texture" id=2]
@@ -27,6 +27,8 @@
 [ext_resource path="res://Assets/Characters/Player/Pirate/09-Attack 3/Attack 3 02.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Characters/Player/Pirate/09-Attack 3/Attack 3 01.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Characters/Player/Sounds/Sword.ogg" type="AudioStream" id=27]
+[ext_resource path="res://Assets/Characters/Player/Sounds/Hit.ogg" type="AudioStream" id=28]
+[ext_resource path="res://Assets/Characters/Player/Pirate/06-Hit Sword/Hit Sword 01.png" type="Texture" id=29]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack-1"
@@ -92,6 +94,22 @@ tracks/0/keys = {
 "values": [ ExtResource( 5 ) ]
 }
 
+[sub_resource type="Animation" id=30]
+resource_name = "Hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
 [sub_resource type="Animation" id=5]
 resource_name = "Idle"
 length = 0.5
@@ -123,6 +141,21 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 6 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 29 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -215,9 +248,7 @@ graph_offset = Vector2( -106.646, -224 )
 radius = 8.0
 height = 4.0
 
-[node name="Player" type="KinematicBody2D" groups=[
-"Player",
-]]
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 7 )
 
 [node name="Particles" type="CPUParticles2D" parent="."]
@@ -236,15 +267,17 @@ scale_amount_random = 0.8
 color = Color( 1, 1, 1, 0.705882 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+texture = ExtResource( 29 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack-1 = SubResource( 1 )
 anims/Attack-2 = SubResource( 2 )
 anims/Attack-3 = SubResource( 3 )
 anims/Fall = SubResource( 4 )
+anims/Hit = SubResource( 30 )
 anims/Idle = SubResource( 5 )
 anims/Jump = SubResource( 6 )
+anims/RESET = SubResource( 31 )
 anims/Run = SubResource( 7 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -269,6 +302,10 @@ volume_db = -6.0
 [node name="Sword" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 27 )
 volume_db = -16.0
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 28 )
+volume_db = -12.0
 
 [node name="Raycast" type="Position2D" parent="."]
 

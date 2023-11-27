@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Terrain/Jungle/Sprites/Environment/pirates.v1.png" type="Texture" id=3]
 
 [sub_resource type="StreamTexture" id=200]
-load_path = "res://.import/terrain.png-e6b00edc1eefa5155dd7dfb85766e9a3.stex"
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
