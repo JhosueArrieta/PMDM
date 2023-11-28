@@ -5,3 +5,4 @@ margin_right = 124.0
 margin_bottom = 20.0
 size_flags_horizontal = 4
 text = "CONFIGURACIÓN"
+flat = true

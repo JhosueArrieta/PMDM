@@ -20,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 157.0
 margin_top = 74.0
 margin_right = 227.0

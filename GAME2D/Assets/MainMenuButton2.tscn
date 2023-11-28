@@ -5,3 +5,4 @@ margin_right = 56.0
 margin_bottom = 20.0
 size_flags_horizontal = 5
 text = "SALIR"
+flat = true
