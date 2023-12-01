@@ -9,7 +9,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var main_menu_button = preload("res://Assets/MainMenuButton.tscn")
-	var buttons = ["JUGAR","CONFIGURACIÓN","SALIR"]
+	var buttons = ["JUGAR","CONFIGURACIÓN","SALIR","TUTORIAL"]
 	
 	for i in range (buttons.size()):
 		var instance = main_menu_button.instance()
@@ -21,6 +21,8 @@ func _ready():
 				instance.connect("pressed",self, "load_scene")
 			2:
 				instance.connect("pressed",self, "quit")
+			3: 
+				instance.connect("pressed",self,"load_scene", ["res://Assets/Terrain/Jungle/Level1.tscn"])
 		$CenterContainer/PanelContainer/VBoxContainer/Buttons.add_child(instance)
 
 
