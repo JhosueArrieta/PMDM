@@ -1,12 +1,6 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	var main_menu_button = preload("res://Assets/MainMenuButton.tscn")
 	var buttons = ["JUGAR","CONFIGURACIÓN","SALIR","TUTORIAL"]
