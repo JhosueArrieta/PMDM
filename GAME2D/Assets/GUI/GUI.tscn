@@ -84,9 +84,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 0, 0, 0.658824 ) ]
 }
 
-[node name="GUI" type="CanvasLayer" groups=[
-"GUI",
-]]
+[node name="GUI" type="CanvasLayer" groups=["GUI"]]
 pause_mode = 2
 script = ExtResource( 2 )
 
@@ -134,7 +132,6 @@ stream = ExtResource( 5 )
 volume_db = -4.0
 
 [node name="Control" type="Control" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -144,7 +141,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 1, 0, 0, 0.658824 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -155,9 +152,6 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -30.0
 margin_bottom = 30.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="GameOver" type="Label" parent="Control/VBoxContainer"]
 margin_right = 384.0
@@ -175,7 +169,7 @@ margin_top = 47.0
 margin_right = 384.0
 margin_bottom = 60.0
 custom_fonts/font = SubResource( 5 )
-text = "You have been defeated, buccaneer"
+text = "You have died sailor, be more careful"
 align = 1
 valign = 1
 

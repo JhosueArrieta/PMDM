@@ -1,6 +1,5 @@
 extends Control
 
-
 func _ready():
 	var main_menu_button = preload("res://Assets/MainMenuButton.tscn")
 	var buttons = ["JUGAR","CONFIGURACIÓN","SALIR","TUTORIAL"]
